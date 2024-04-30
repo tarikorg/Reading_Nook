@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html style="height:100%;" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Nook - {{title}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style="height:100%;">
+    <header class="flex justify-between items-center bg-sky-100 px-5 border-b-4 border-sky-700">
+    <a href="">
+        <h1>The Reading Nook</h1>
+    </a>
+    <nav class="flex">
+        <a class="bg-sky-400 hover:bg-sky-600 transition-colors duration-300 text-white py-2 px-5 m-2 rounded-md" href="">Login</a>
+        <a class="bg-sky-400 hover:bg-sky-600 transition-colors duration-300 text-white py-2 px-5 m-2 rounded-md" href="">Register</a>
+    </nav>
+    </header>
+
+        {{{body}}}
+
+</body>
+
+</html>
+
+{{!-- <div class="book">
+    <h2>{{title}}</h2>
+    <p>Author: {{author}}</p>
+    <p>Description: {{description}}</p>
+    <p>Rating: {{rating}}</p>
+</div>
+
+<div class="book-list">
+    <h2>Books</h2>
+    <ul>
+        {{#each books}}
+        <li>
+            <h3>{{this.title}}</h3>
+            <p>Author: {{this.author}}</p>
+            <p>Description: {{this.description}}</p>
+            <p>Rating: {{this.rating}}</p>
+        </li>
+        {{/each}}
+    </ul>
+</div> --}}
