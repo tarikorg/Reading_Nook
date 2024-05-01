@@ -10,38 +10,27 @@
 
 <body style="height:100%;">
     <header class="flex justify-between items-center bg-sky-100 px-5 border-b-4 border-sky-700">
-    <a href="">
+    <a href="/">
         <h1>The Reading Nook</h1>
     </a>
     <nav class="flex">
-        <a class="bg-sky-400 hover:bg-sky-600 transition-colors duration-300 text-white py-2 px-5 m-2 rounded-md" href="">Login</a>
-        <a class="bg-sky-400 hover:bg-sky-600 transition-colors duration-300 text-white py-2 px-5 m-2 rounded-md" href="">Register</a>
+        <a class="bg-sky-400 hover:bg-sky-600 transition-colors duration-300 text-white py-2 px-5 m-2 rounded-md" href="{{href1}}">{{btn1}}</a>
+        <a class="bg-sky-400 hover:bg-sky-600 transition-colors duration-300 text-white py-2 px-5 m-2 rounded-md" href="{{href2}}">{{btn2}}</a>
     </nav>
     </header>
 
         {{{body}}}
 
+    <footer>
+        <div class="flex justify-center">
+            <a class="px-2" href="https://github.com/ThStranick15">Thomas Stranick</a>
+            <a class="px-2" href="https://github.com/tarikorg">Mirsad Abedinoski</a>
+            <a class="px-2" href="">Muhsin Tarik Orgerim</a>
+            <a class="px-2" href="https://github.com/TIrwin19">Trevor Irwin</a>
+            <a class="px-2" href="">Kendell Rennie</a>
+        </div>
+    </footer>
+
 </body>
 
 </html>
-
-{{!-- <div class="book">
-    <h2>{{title}}</h2>
-    <p>Author: {{author}}</p>
-    <p>Description: {{description}}</p>
-    <p>Rating: {{rating}}</p>
-</div>
-
-<div class="book-list">
-    <h2>Books</h2>
-    <ul>
-        {{#each books}}
-        <li>
-            <h3>{{this.title}}</h3>
-            <p>Author: {{this.author}}</p>
-            <p>Description: {{this.description}}</p>
-            <p>Rating: {{this.rating}}</p>
-        </li>
-        {{/each}}
-    </ul>
-</div> --}}

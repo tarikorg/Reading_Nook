@@ -1,8 +1,10 @@
 <main class="flex flex-1 items-center justify-center">
-<form class="flex flex-col rounded-md border-2 border-sky-700 m-3 px-20 bg-sky-50" action="">
+<form class="flex flex-col rounded-md border-2 border-sky-700 m-3 px-20 bg-sky-50 items-center" action="/auth/login" method="POST">
     <h1 class="text-4xl m-3">Login</h1>
-    <input class="m-3 rounded-md border-2 border-sky-700 p-3" type="text" placeholder="Email">
-    <input class="m-3 rounded-md border-2 border-sky-700 p-3" type="text" placeholder="Password">
-    <button class="bg-sky-700 text-white py-2 px-10 m-3 rounded-md">Submit</button>
+    <input class="m-3 rounded-md border-2 border-sky-700 p-3" type="text" id="username" name="username" placeholder="Username">
+    
+    <input class="m-3 rounded-md border-2 border-sky-700 p-3" type="text" id="password" name="password" placeholder="Password">
+    <p class='{{class}}'>{{error}}</p>
+    <button class="bg-sky-700 text-white py-2 px-10 m-3 rounded-md" type="submit">Submit</button>
 </form>
 </main>
