@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const client = require('../db/Connection')
-const bcrypt = require('bcrypt')
+
 
 class Favorite extends Model {
 

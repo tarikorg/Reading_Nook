@@ -34,13 +34,6 @@ User.init(
                 len: 6
             },
             allowNull: false
-        },
-        favorite_id:{
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'favorite',
-                key: 'id'
-            }
         }
     },
     {
