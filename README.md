@@ -1,8 +1,12 @@
-The Reading Nook 
+# The Reading Nook 
 
-Welcome to The Reading Nook! This application is your cozy corner on the internet, designed to provide users with a platform to explore, rate, and favorite books. Similar to Yelp, users can rate books they've read and mark their favorites for future reference.
+Welcome to The Reading Nook! This application is your cozy corner on the internet, designed to provide users with a platform to explore, and favorite books. Similar to Yelp, users can rate books they've read and mark their favorites for future reference.
 
-Technologies Used
+## Authors: Thomas Stranick, Mirsad Abedinoski, Muhsin Tarik Ogerim, Trevor Irwin, Kendell Rennie
+
+# Description 
+
+# Technologies Used
 
 * Axios: Axios is used for making HTTP requests to interact with the backend server.
 * bcrypt: Bcrypt is utilized for hashing and salting passwords for secure user authentication.
@@ -12,7 +16,7 @@ Technologies Used
 * pg and pg-hstore: These packages are used for interacting with PostgreSQL database.
 * Sequelize: Sequelize is an ORM (Object-Relational Mapping) used for database management and query handling.
 
-Getting Started
+# Getting Started
 
 To get started with The Reading Nook, follow these steps:
 1. Clone the repository to your local machine:bashCopy codegit clone https://github.com/your-username/the-reading-nook.git 
@@ -21,14 +25,17 @@ To get started with The Reading Nook, follow these steps:
 4. Run the server:bashCopy codenpm start 
 5. Access the application through your browser at http://localhost:3000. 
 
-Features
+# Features
 * User Authentication: Users can sign up, log in, and log out securely using bcrypt for password encryption and express-session for session management.
 * Book Search and Listing: Users can search for books and view detailed information about each book, including ratings and reviews.
 * Rating and Favoriting: Logged-in users can rate books they've read and mark them as favorites.
 * User Profiles: Users have their own profiles where they can see their favorite books and manage their account settings.
 
-Contributing
+# Contributing
 Contributions are welcome! If you have any suggestions, feature requests, or bug reports, please open an issue or submit a pull request.
 
-License
+# License
 This project is licensed under the MIT License.
+
+# References
+https://www.artstation.com/artwork/xDBZnE 

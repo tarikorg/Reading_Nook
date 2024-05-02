@@ -21,12 +21,12 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-const router = express.Router();
+const router = express.Router()
 
 // Route handler to get random fiction books
 router.get('/search/:genre', async (req, res) => {
   const searchInput = req.params.genre
-  console.log(searchInput)
+
   const searchTerm = searchInput
   const maxResults = 25
   const desiredBooks = 5
@@ -49,12 +49,15 @@ router.get('/search/:genre', async (req, res) => {
       }
     }
 
+
     // res.json(randomBooks)
-    res.render('search', { books: randomBooks, 
+    res.render('search', {
+      books: randomBooks,
       btn1: 'Favorites',
-        href1: '/favorites',
-        btn2: 'Logout',
-        href2: '/logout' });
+      href1: '/favorites',
+      btn2: 'Logout',
+      href2: '/logout'
+    });
   } catch (error) {
     console.error(error)
     res.status(500).send('Error retrieving books')
@@ -64,8 +67,8 @@ router.get('/search/:genre', async (req, res) => {
 router.post('/search/title/', async (req, res) => {
   // const searchedName = req.params.book_name.replace(' ','%20')
   const { title, author } = req.body
-const titleInject=''
-const authorInject=''
+  const titleInject = ''
+  const authorInject = ''
 
   console.log(req.body)
   console.log(title)
@@ -79,12 +82,12 @@ const authorInject=''
 
     searchedBook.push(response.data)
     console.log(searchedBook[0].items)
-    res.render('search', { 
-      books: searchedBook[0].items, 
+    res.render('search', {
+      books: searchedBook[0].items,
       btn1: 'Favorites',
-        href1: '/favorites',
-        btn2: 'Logout',
-        href2: '/logout'
+      href1: '/favorites',
+      btn2: 'Logout',
+      href2: '/logout'
     })
     // return response.data
   } catch (err) {

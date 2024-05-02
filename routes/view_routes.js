@@ -1,7 +1,9 @@
 const view_router = require('express').Router()
 
-function isAuth(req,res,next){
-    if(!req.session.user_id){
+const { Favorite } = require('../models')
+
+function isAuth(req, res, next) {
+    if (!req.session.user_id) {
         return res.redirect('/register')
     }
 
@@ -9,7 +11,7 @@ function isAuth(req,res,next){
 }
 
 //Show homepage
-view_router.get('/', (req,res) => {
+view_router.get('/', (req, res) => {
     res.render('landing', {
         title: 'Home',
         btn1: 'Login',
@@ -20,7 +22,7 @@ view_router.get('/', (req,res) => {
 })
 
 //show register page
-view_router.get('/register', (req,res) => {
+view_router.get('/register', (req, res) => {
     res.render('register', {
         title: 'Register',
         btn1: 'Login',
@@ -31,7 +33,7 @@ view_router.get('/register', (req,res) => {
 })
 
 //show register page
-view_router.get('/register/:error', (req,res) => {
+view_router.get('/register/:error', (req, res) => {
     const error = req.params.error
     res.render('register', {
         title: 'Register',
@@ -45,7 +47,7 @@ view_router.get('/register/:error', (req,res) => {
 })
 
 //show login page
-view_router.get('/login', (req,res) => {
+view_router.get('/login', (req, res) => {
     res.render('login', {
         title: 'Login',
         btn1: 'Home',
@@ -56,7 +58,7 @@ view_router.get('/login', (req,res) => {
 })
 
 //show login page
-view_router.get('/login/:error', (req,res) => {
+view_router.get('/login/:error', (req, res) => {
     const error = req.params.error
     res.render('login', {
         title: 'Login',
@@ -70,7 +72,7 @@ view_router.get('/login/:error', (req,res) => {
 })
 
 //show search page
-view_router.get('/search', /*isAuth,*/ (req,res) => {
+view_router.get('/search', isAuth, (req, res) => {
     res.render('search', {
         title: 'Search',
         btn1: 'Favorites',
@@ -80,9 +82,19 @@ view_router.get('/search', /*isAuth,*/ (req,res) => {
     })
 })
 
-//show favorites page
-view_router.get('/favorites', /*isAuth,*/ (req,res) => {
-    res.render('favorites', {
+view_router.get('/favorites', isAuth, async (req, res) => {
+    //take the values from database favorites
+
+    const favoritesBooks = await Favorite.findAll({
+        where: {
+            userId: req.session.user_id
+        }
+    })
+
+    // console.log(favoritesBooks)
+    console.log("favorite_route")
+    res.render("favorites", {
+        favoriteBooks: favoritesBooks.map(fav => fav.get({ plain: true })),
         title: 'Favorites',
         btn1: 'Search',
         href1: '/search',
@@ -91,7 +103,7 @@ view_router.get('/favorites', /*isAuth,*/ (req,res) => {
     })
 })
 
-view_router.get('/logout', isAuth, (req,res) => {
+view_router.get('/logout', isAuth, (req, res) => {
     req.session.user_id = null
     res.render('landing', {
         title: 'Home',
