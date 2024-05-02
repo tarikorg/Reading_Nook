@@ -37,6 +37,7 @@ router.delete('/favorites', async (req, res) => {
                 userId: req.session.user_id
             }
         })
+        res.json({message: "Deleted successfully"})
     } catch (err) {
         console.log(err)
     }
