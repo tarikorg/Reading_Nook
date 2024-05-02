@@ -5,4 +5,4 @@ User.hasMany(Favorite)
 Favorite.belongsTo(User)
 
 
-module.exports={Favorite, User}
+module.exports = { Favorite, User }

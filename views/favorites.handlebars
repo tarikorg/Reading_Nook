@@ -1,35 +1,39 @@
-<main class="flex flex-1 flex-col items-center">
-        <!-- <div class="basis-1/4">
+<main class="flex flex-1 flex-col items-center bg-sky-50">
+    <!-- <div class="basis-1/4">
             <h1>User Info</h1>
             <p>Email</p>
             <p>Password</p>
         </div> -->
-        <div class="basis-3/4 flex flex-col items-center m-3">
-            <h1 class="text-4xl m-5">Favorites</h1>
-            <div class="flex">
-                <div class="flex flex-row bg-sky-50 border-2 border-sky-700 m-2 p-2 rounded-md">
-                    <div class="border-2 bg-white border-sky-700 m-2 p-2 rounded-md">
-                        <h1>Cover <br> Placeholder</h1>
+    <div class="flex flex-col  items-center m-3">
+        <h1 class="text-4xl m-5">Favorites</h1>
+        <div class="flex ">
+            <div id="favorite-books"
+                class="flex flex-row flex-wrap border-2 border-sky-700 bg-sky-100 m-2 p-2 rounded-md">
+                {{#each favoriteBooks}}
+                <div data-id="{{api_id}}"
+                    class="book flex border-2 border-sky-700 bg-sky-50 m-2 p-2 rounded-md justify-between">
+                    <div class="flex">
+                        {{#if image}}
+                        <img src="{{image}}" alt="Book Cover">
+                        {{else}}
+                        <p>No Image Available</p>
+                        {{/if}}
+                        <div class="flex flex-col justify-between m-2">
+                            <h2 class="font-bold text-lg">{{title}}</h2>
+                            <div class="flex items-center">
+                                <button
+                                    class="delete-button bg-red-200 hover:bg-red-400 px-2 py-1 mt-2 rounded-md">Delete</button>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Title:</h3>
-                        <h3>Author:</h3>
-                        <h3>Description:</h3>
-                        <h3>Rating:</h3>
-                    </div>
+
                 </div>
-                <div class="flex flex-row bg-sky-50 border-2 border-sky-700 m-2 p-2 rounded-md">
-                    <div class="border-2 bg-white border-sky-700 m-2 p-2 rounded-md">
-                        <h1>Cover <br> Placeholder</h1>
-                    </div>
-                    <div>
-                        <h3>Title:</h3>
-                        <h3>Author:</h3>
-                        <h3>Description:</h3>
-                        <h3>Rating:</h3>
-                    </div>
-                </div>
+                {{/each}}
             </div>
         </div>
-        </div>
-    </main>
+    </div>
+    </div>
+</main>
+
+
+<script src="/js/favorites.js"></script>

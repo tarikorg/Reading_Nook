@@ -10,8 +10,8 @@ const bcrypt = require('bcrypt')
 
 class User extends Model {
     //validatepassword
-    validatePassword(password){
-      return bcrypt.compareSync(password, this.password)  
+    validatePassword(password) {
+        return bcrypt.compareSync(password, this.password)
     }
 }
 
@@ -37,16 +37,16 @@ User.init(
         }
     },
     {
-       sequelize: client,
-       modelName: 'user',
-       hooks: {
-        beforeCreate: async (newData) => {
-            newData.password = await bcrypt.hash(newData.password, 10)//encrypt the password at the creation
-            return newData
-        }
-       },
-       timestamps: false
-       
+        sequelize: client,
+        modelName: 'user',
+        hooks: {
+            beforeCreate: async (newData) => {
+                newData.password = await bcrypt.hash(newData.password, 10)//encrypt the password at the creation
+                return newData
+            }
+        },
+        timestamps: false
+
     }
 )
 

@@ -10,23 +10,32 @@ class Favorite extends Model {
 //user-id
 
 Favorite.init({
-    id:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-      },
-      title:{
-        type: DataTypes.STRING,
-        allowNull: false,
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
 
-      }
-      },
-      {
-       sequelize: client,
-       timestamps: false,
-       modelName: 'favorite'
-      }
+  },
+  image: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  api_id: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
+
+},
+  {
+    sequelize: client,
+    timestamps: false,
+    modelName: 'favorite'
+  }
 )
 
-module.exports = Favorite;
+module.exports = Favorite
