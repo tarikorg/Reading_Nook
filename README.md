@@ -1,12 +1,29 @@
-# The Reading Nook 
-
-Welcome to The Reading Nook! This application is your cozy corner on the internet, designed to provide users with a platform to explore, and favorite books. Similar to Yelp, users can rate books they've read and mark their favorites for future reference.
+# The Reading Nook
+![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 ## Authors: Thomas Stranick, Mirsad Abedinoski, Muhsin Tarik Ogerim, Trevor Irwin, Kendell Rennie
 
-# Description 
+## Description 
 
-# Technologies Used
+Welcome to The Reading Nook! This application is your cozy corner on the internet, designed to provide users with a platform to explore, and favorite books. Similar to Yelp, users can rate books they've read and mark their favorites for future reference.
+
+## Screenshots
+<img src="./public/assets/images/project2img1.png"/>
+<img src="./public/assets/images/project2img2.png"/>
+<img src="./public/assets/images/project2img3.png"/>
+
+## Installation
+N/A, Please refer to the deployed web app in Deployment.
+
+## Usage
+### Features
+* User Authentication: Users can sign up, log in, and log out securely using bcrypt for password encryption and express-session for session management.
+* Book Search and Listing: Logged-in users can search for books by title, author, genre, and view detailed information about each book. As well as add books to their favorites.
+* Favoriting: Logged-in users can add and delete books as favorites, that then show up in their favorites section. Cookies through current sessions allows users to view their own favorites, and not another users.
+
+## Credits
+### Technologies Used
 
 * Axios: Axios is used for making HTTP requests to interact with the backend server.
 * bcrypt: Bcrypt is utilized for hashing and salting passwords for secure user authentication.
@@ -15,27 +32,31 @@ Welcome to The Reading Nook! This application is your cozy corner on the interne
 * Express-session: Express-session is used for managing user sessions and authentication.
 * pg and pg-hstore: These packages are used for interacting with PostgreSQL database.
 * Sequelize: Sequelize is an ORM (Object-Relational Mapping) used for database management and query handling.
+* Tailwind: css framework used for frontend
 
-# Getting Started
+### References
+Homepage Image: https://www.artstation.com/artwork/xDBZnE  
+Logo Image: https://img.pikbest.com/origin/10/45/60/32IpIkbEsT3uW.png!f305cw 
 
-To get started with The Reading Nook, follow these steps:
-1. Clone the repository to your local machine:bashCopy codegit clone https://github.com/your-username/the-reading-nook.git 
-2. Install dependencies:bashCopy codecd the-reading-nook npm install 
-3. Set up your PostgreSQL database and configure the connection in the .env file.  
-4. Run the server:bashCopy codenpm start 
-5. Access the application through your browser at http://localhost:3000. 
+## Deployment
+Deployed Heroku App [The Reading Nook](https://guarded-river-34918-8aebb7f6bceb.herokuapp.com/)  
+Github Repo [The Reading Nook](https://github.com/tarikorg/Reading_Nook)
 
-# Features
-* User Authentication: Users can sign up, log in, and log out securely using bcrypt for password encryption and express-session for session management.
-* Book Search and Listing: Users can search for books and view detailed information about each book, including ratings and reviews.
-* Rating and Favoriting: Logged-in users can rate books they've read and mark them as favorites.
-* User Profiles: Users have their own profiles where they can see their favorite books and manage their account settings.
+## Contributors
+* [Thomas Stranick](https://github.com/ThStranick15) 
+* [Mirsad Abedinoski](https://github.com/Mirsad33)
+* [Kendell Rennie](https://github.com/dellman000)
+* [Trevor Irwin](https://github.com/TIrwin19)
+* [Muhsin Tarik Orgerim](https://github.com/tarikorg)
 
-# Contributing
-Contributions are welcome! If you have any suggestions, feature requests, or bug reports, please open an issue or submit a pull request.
-
-# License
+## License
 This project is licensed under the MIT License.
 
-# References
-https://www.artstation.com/artwork/xDBZnE 
+
+
+
+
+
+
+
+
