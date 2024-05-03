@@ -37,15 +37,29 @@ router.get('/search/:genre', async (req, res) => {
     const initialResults = await searchGenre(searchTerm, maxResults, 0)
     const totalItems = initialResults.totalItems
 
+    // Keep track of selected book IDs to avoid duplicates
+    const selectedBookIds = new Set()
+
     // Loop until the targeted amount
     while (randomBooks.length < desiredBooks) {
       //random index within total results
       const randomIndex = getRandomInt(0, Math.min(totalItems - 1, maxResults - 1))
 
       //Check if this index is already chosen and within retrieved results
-      if (!randomBooks.includes(randomIndex) && randomIndex < initialResults.items.length) {
-        randomBooks.push(initialResults.items[randomIndex])
+      // if (!randomBooks.includes(randomIndex) && randomIndex < initialResults.items.length) {
+      //   randomBooks.push(initialResults.items[randomIndex])
 
+      // }
+
+      if (randomIndex < initialResults.items.length) {
+        const randomBook = initialResults.items[randomIndex];
+        const bookId = randomBook.id;
+
+        // Check if the book ID is unique
+        if (!selectedBookIds.has(bookId)) {
+          randomBooks.push(randomBook);
+          selectedBookIds.add(bookId);
+        }
       }
     }
 
