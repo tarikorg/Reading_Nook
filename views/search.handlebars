@@ -5,8 +5,8 @@
                 <h1 class="mx-4 mt-2 text-white text-lg font-semibold">Search</h1>
                 <div class="mx-4 border-2 border-sky-200 my-2"></div>
 
-                <form class="mx-4 flex flex-row lg:flex-col" action="/search/title/" method="post">
-                    <div class="flex flex-row lg:flex-col">
+                <form class="mx-4 flex flex-col" action="/search/title/" method="post">
+                    <div class="flex flex-col">
                         <input class="m-2 p-1 rounded-md" type="text" name="title" placeholder="Search a Title">
                         <input class="m-2 p-1 rounded-md" type="text" name="author" placeholder="Search a Author">
                     </div>
@@ -17,7 +17,7 @@
             <nav class="">
                 <h1 class="mx-4 mt-2 text-white text-lg font-semibold">Categories</h1>
                 <div class="mx-4 border-2 border-sky-200 my-2"></div>
-                <div class="flex flex-row lg:flex-col">
+                <div class="flex flex-row lg:flex-col flex-wrap">
                     <a href="/search/horror"
                         class="block text-bold text-white hover:text-sky-500 px-4 py-2 genre-button">Horror</a>
                     <a href="/search/romance"
@@ -26,6 +26,23 @@
                         class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Sci-Fi</a>
                     <a href="/search/non-fiction"
                         class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Non-Fiction</a>
+                        <a href="/search/manga"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Manga</a>
+                        <a href="/search/biology"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Biology</a>
+                        <a href="/search/history"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">History</a>
+                        <a href="/search/comic"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Comic</a>
+                        <a href="/search/psychology"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Psychology</a>
+                        <a href="/search/finance"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Finance</a>
+                        <a href="/search/mystery"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Mystery</a>
+                        <a href="/search/politics"
+                        class="block text-white hover:text-sky-500 px-4 py-2 genre-button">Politics</a>
+                        
                 </div>
             </nav>
         </div>
@@ -37,10 +54,10 @@
                     <div id="searchResults">
                         {{#each books}}
                         <div data-id="{{this.id}}"
-                            class="book flex border-2 border-sky-700 m-2 p-2 rounded-md justify-between">
+                            class="book flex flex-col lg:flex-row border-2 border-sky-700 m-2 p-2 rounded-md justify-between">
                             <div class="flex">
                                 {{#if this.volumeInfo.imageLinks}}
-                                <img src="{{this.volumeInfo.imageLinks.thumbnail}}" alt="Book Cover">
+                                <img class="h-3/4" src="{{this.volumeInfo.imageLinks.thumbnail}}" alt="Book Cover">
                                 {{else}}
                                 <p>No Image Available</p>
                                 {{/if}}
